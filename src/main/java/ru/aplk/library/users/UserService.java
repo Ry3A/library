@@ -26,9 +26,11 @@ public class UserService {
     }
     */
     public ResponseWithStatus<List<User>> findAll(HttpServletRequest request) {
+
         if(authService.isNotAdmin(request)) {
             return ResponseWithStatus.empty(403);
         }
+
         return ResponseWithStatus.create(200, userRepo.findAll());
     }
     /*

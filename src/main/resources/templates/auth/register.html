@@ -2,22 +2,52 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Электронная библиотека</title>
+    <link rel="icon" href="/icon/bookopen.png" type="image/x-icon">
+    <!--<link rel="stylesheet" th:href="@{/static/css/register.css}">-->
+    <link rel="stylesheet" href="/static/css/register.css">
+    <script src="https://kit.fontawesome.com/98db032af2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
-<form th:action="@{/auth/register}" th:method="POST" th:object="${user}">
+<section class="sectionLogin">
 
-    <input type="text" name="firstname" placeholder="First name" th:field="*{firstname}">
-    <br>
-    <input type="text" name="lastname" placeholder="Last name" th:field="*{lastname}">
-    <br>
-    <input type="text" name="email" placeholder="Email" th:field="*{email}">
-    <br>
-    <input type="text" name="password" placeholder="Password" th:field="*{password}">
-    <br>
+    <div class="boxLogin">
 
-    <!--<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>-->
-    <input type="submit" value="Зарегестрироваться"/>
-</form>
+        <div class="square" style="--i:0"></div>
+        <div class="square" style="--i:1"></div>
+        <div class="square" style="--i:2"></div>
+        <div class="square" style="--i:3"></div>
+        <div class="square" style="--i:4"></div>
+
+
+        <div class="containerLogin">
+            <div class="form">
+                <h2 id="h2Login">Заполните поля ниже</h2>
+                <form th:action="@{/auth/register}" th:method="POST" th:object="${user}">
+
+                    <div class="inputBox">
+                        <input type="text" name="firstname" placeholder="Имя" th:field="*{firstname}">
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="lastname" placeholder="Фамилия" th:field="*{lastname}">
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="email" placeholder="Почта" th:field="*{email}">
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="password" placeholder="Пароль" th:field="*{password}">
+                    </div>
+
+                    <!--<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>-->
+                    <div class="inputBox">
+                        <input type="submit" value="Зарегистрироваться">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 </body>
 </html>

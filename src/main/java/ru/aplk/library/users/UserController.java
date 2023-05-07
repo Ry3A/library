@@ -22,6 +22,7 @@ public class UserController {
             @NonNull HttpServletRequest request
     ) {
         ResponseWithStatus<List<User>> response = userService.findAll(request);
+
         return ResponseEntity.status(response.getStatus()).body(response);
     }
     /*

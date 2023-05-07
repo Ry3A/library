@@ -31,4 +31,5 @@ public class WebController {
         return "auth/register";
     }
 
+
 }
